@@ -16,6 +16,10 @@
         <input type="number" placeholder="Digite un número" name="numero2" id="numero2"> <br><br>
 
         <input type="button" name="sumar" id="sumar" value="Sumar">
+        <input type="button" name="restar" id="restar" value="Restar">
+        <input type="button" name="multiplicar" id="multiplicar" value="Multiplicar">
+        <input type="button" name="dividir" id="dividir" value="Dividir">
+        <input type="button" name="elevar2" id="elevar2" value="Elevar2">
 
     </form>
     <script>
@@ -25,8 +29,44 @@
             numero1 = parseInt(numero1);
             numero2 = parseInt(numero2);
             var suma = numero1 + numero2;
-            var mensaje = 'El resultado de sumar ' + numero1 + ' + ' + numero2 + ' es: ' + suma;
-            console.log(mensaje)
+            var mensajeSuma = 'El resultado de sumar ' + numero1 + ' + ' + numero2 + ' es: ' + suma;
+            console.log(mensajeSuma)
+        })
+        document.getElementById('restar').addEventListener('click', function() {
+            var numero1 = document.getElementById('numero1').value;
+            var numero2 = document.getElementById('numero2').value;
+            numero1 = parseInt(numero1);
+            numero2 = parseInt(numero2);
+            var resta = numero1 - numero2;
+            var mensajeResta = 'El resultado de restar ' + numero1 + ' - ' + numero2 + ' es: ' + resta;
+            console.log(mensajeResta)
+        })
+        document.getElementById('multiplicar').addEventListener('click', function() {
+            var numero1 = document.getElementById('numero1').value;
+            var numero2 = document.getElementById('numero2').value;
+            numero1 = parseInt(numero1);
+            numero2 = parseInt(numero2);
+            var division = numero1 / numero2;
+            var mensajeDivision = 'El resultado de dividir ' + numero1 + ' / ' + numero2 + ' es: ' + division;
+            console.log(mensajeDivision)
+        })
+        document.getElementById('multiplicar').addEventListener('click', function() {
+            var numero1 = document.getElementById('numero1').value;
+            var numero2 = document.getElementById('numero2').value;
+            numero1 = parseInt(numero1);
+            numero2 = parseInt(numero2);
+            var multiplicacion = numero1 * numero2;
+            var mensajeMultiplicacion = 'El resultado de multiplicar ' + numero1 + ' * ' + numero2 + ' es: ' + multiplicacion;
+            console.log(mensajeMultiplicacion)
+        })
+        document.getElementById('elevar2').addEventListener('click', function() {
+            var numero1 = document.getElementById('numero1').value;
+            var numero2 = document.getElementById('numero2').value;
+            numero1 = parseInt(numero1);
+            numero2 = parseInt(numero2);
+            var elevacion2 = numero1*numero1 + numero2*numero2;
+            var mensajeElevacion2 = 'El resultado de elevar y sumar ' + numero1 + ' + ' + numero2 + ' es: ' + elevacion2;
+            console.log(mensajeElevacion2)
         })
     </script>
 </body>
