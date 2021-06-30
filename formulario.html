@@ -1,0 +1,76 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Formulario</title>
+</head>
+<body>
+    <h1>Formulario</h1>
+    <form action="/my_aplication" id="form" name="form" method="GET">
+        
+        <label for="nombre">Nombre</label>
+        <input type="text" name="nombre" id="nombre" value="" placeholder="Escriba su nombre"><br/><br/>
+
+        <label for="apellido">Apellido</label>
+        <input type="text" name="apellido" id="apellido" value="" placeholder="Escriba su apellido"> <br/><br/>
+    
+        <label for="email">Email</label>
+        <input type="email" name="email" id="email" value=""><br/><br/>
+        
+        <label for="edad">Edad</label>
+        <input type="number" name="edad" id="edad" value=""><br/><br/>
+
+        <label for="pais">País</label>
+        <select name="pais" id="pais">
+            <option value="Argentina">Argentina</option>
+            <option value="Brasil">Brasil</option>
+            <option value="Chile">Chile</option>
+            <option value="Colombia">Colombia</option>
+            <option value="México">México</option>
+            <option value="Perú">Perú</option>
+            <option value="Venezuela">Venezuela</option>
+        </select> <br/><br/>
+
+        Género: <br/>
+
+        <label for="sexo1">Masculino</label>
+        <input type="radio" name="sexo" id="sexo1" value="Masculino"><br/>
+        <label for="sexo2">Femenino</label>
+        <input type="radio" name="sexo" id="sexo2" value="Femenino"><br/>
+        <label for="sexo3">Otro</label>
+        <input type="radio" name="sexo" id="sexo3" value="no_contesta"><br/>
+
+        Hobbies: <br/>
+        <label for="hobbies1">Fútbol</label>
+        <input type="checkbox" name="hobbies[]" id="hobbies1" value="futbol"><br/>
+        <label for="hobbies2">Basquet</label>
+        <input type="checkbox" name="hobbies[]" id="hobbies2" value="basquet"><br/>
+        <label for="hobbies3">Tenis</label>
+        <input type="checkbox" name="hobbies[]" id="hobbies3" value="tenis"><br/>
+        <label for="hobbies4">Gaming</label>
+        <input type="checkbox" name="hobbies[]" id="hobbies4" value="gaming"><br/>
+
+        <label for="comentarios">Comentarios</label>
+        <textarea name="comentarios" id="comentarios" cols="30" rows="10"></textarea> <br/>
+
+        <input type="button" name="ver_resultados" id="ver_resultados" value="Ver resultados">
+    </form>
+    <script>
+        document.getElementById("ver_resultados").addEventListener('click', function(){
+
+            var nombre = document.getElementById('nombre').value
+            var apellido = document.getElementById('apellido').value
+            var email = document.getElementById('email').value
+            var edad = document.getElementById('edad').value
+            var pais = document.getElementById('pais').value
+            var comentario = document.getElementById('comentarios').value
+            
+        var resultado = 'Nombre: ' + nombre + ' \nApellido: ' + apellido + ' \nEmail: ' + email + ' \nEdad: ' + edad + ' \nPais: ' + pais + ' \nComentario: ' + comentario
+        console.log(resultado)
+
+        })
+    </script>
+</body>
+</html>
