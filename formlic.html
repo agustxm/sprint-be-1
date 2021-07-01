@@ -1,0 +1,109 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Licencia/con</title>
+</head>
+<body>
+    <form>
+        <label for="nombre">Nombre</label>
+        <input type="text" id="nombre" placeholder="Escribra su nombre"><br><br>
+
+        <label for="apellido">Apellido</label>
+        <input type="text" id="apellido" placeholder="Escribra su apellido"><br><br>
+
+        <label for="edad">Edad</label>
+        <input type="number" id="edad" placeholder="Ingrese su edad"><br><br>
+
+        <label for="tiene_licencia">¿Tiene licencia?</label>
+        <select name="tiene_licencia" id="tiene_licencia">
+            <option value="Si">Si</option>
+            <option value="No">No</option>
+        </select> <br/><br/>
+
+        <label for="fecha_exp">Fecha de expiracion</label>
+        <input type="text" name="fecha_exp" id="fecha_exp" placeholder="YYYY/MM/DD"><br><br>
+        <input type="button" id = "button" value="Button">
+        
+
+        <script>
+            document.getElementById("button").addEventListener("click", function() {
+                var nombre = document.getElementById("nombre").value;
+                var apellido = document.getElementById("apellido").value;
+                var edad = document.getElementById("edad").value;
+                var tiene_licencia = document.getElementById("tiene_licencia").value;
+               if  (nombre == "") {
+                   var nombreVer = false;
+                   alert(mensaje);
+               }else {
+                   var nombreVer = true;
+               }
+               if  (apellido == "") {
+                   var apellidoVer = false;
+                   alert(mensaje);
+               }else {
+                   var apellidoVer = true;
+               }
+               if  (edad == "") {
+                   var edadVer = false;
+                   alert(mensaje);
+               }else {
+                   var edadVer = true;
+               }
+            
+               if (edad < 18) {
+                   var edadVer2 = false;
+                   var mensaje = "Usted es menor de edad";
+                   alert(mensaje);
+               }else {
+                   var edadVer2 = true;
+               }
+               
+               if (tiene_licencia == "No") {
+                   var tiene_licenciaVer = false;
+                   var mensaje = "Usted no tiene licencia"
+                   alert(mensaje);
+               } else { 
+                   var tiene_licenciaVer = true;
+               }
+                
+                var fecha_exp = document.getElementById("fecha_exp").value;
+                var fecha_exp = fecha_exp.replace("/", "");
+                var fecha_exp = fecha_exp.replace("/", "");
+                console.log(fecha_exp)
+
+                fecha_exp = parseInt(fecha_exp);
+                if (fecha_exp > 20210306) {
+                    var fecha_expVer = true;
+                }else{
+                    var fecha_expVer = false;
+                    var mensaje = "licencia caducada";
+                    alert(mensaje);
+                }
+            
+                
+                var validacionCampos = nombreVer && apellidoVer && edadVer;
+                if (validacionCampos == true) {
+                    var validacionFinal = edadVer2 && tiene_licenciaVer && fecha_expVer;
+                    if (validacionFinal == true) {
+                        var habilitado = "El señor " + nombre + " " + apellido + " está habilitado para manejar."
+                        alert(habilitado);
+                    } else {
+                        var noHabilitado = "El señor " + nombre + " " + apellido + " no está habilitado para manejar."
+                        alert(noHabilitado);
+                    }
+                    
+                   
+                } else {
+                    var mensaje = "Complete todos los campos";
+                    alert(mensaje)
+                }
+
+            })
+        </script>
+
+    </form>
+</body>
+</html>
