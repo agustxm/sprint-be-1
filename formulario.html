@@ -67,9 +67,24 @@
             var pais = document.getElementById('pais').value
             var comentario = document.getElementById('comentarios').value
             
-        var resultado = 'Nombre: ' + nombre + ' \nApellido: ' + apellido + ' \nEmail: ' + email + ' \nEdad: ' + edad + ' \nPais: ' + pais + ' \nComentario: ' + comentario
-        console.log(resultado)
+            var resultado = 'Nombre: ' + nombre + ' \nApellido: ' + apellido + ' \nEmail: ' + email + ' \nEdad: ' + edad + ' \nPais: ' + pais + ' \nComentario: ' + comentario
+            console.log(resultado)
 
+            var hobbies = document.getElementsByName('hobbies[]');
+            
+            console.log(hobbies);
+            var mensaje = "Hobbies que te gustan: ";
+            
+            for (var i = 0; i < hobbies.length; i++) {
+                console.log('Hobbie: ' + hobbies[i].value + ' - Seleccionado?: ' + hobbies[i].checked);
+            }
+            
+            for (var i = 0; i < hobbies.length; i++) {
+                if (hobbies[i].checked === true) {
+                    mensaje = mensaje + hobbies[i].value + ", "
+                }
+            }
+            console.log(mensaje);
         })
     </script>
 </body>
